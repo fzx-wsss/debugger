@@ -139,8 +139,8 @@ public class DebuggerInvocationHandler implements MethodInterceptor {
             }
         }
         
-        logger.warn("未收到调试响应，执行本地方法");
-        return invocation.proceed();
+        logger.warn("未收到调试响应");
+        throw new UnsupportedOperationException("远程调用失败，请查看服务端日志");
     }
     
     
